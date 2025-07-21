@@ -33,6 +33,14 @@
       A:\;
       E:\;
       $(windir)\**;
+      $(MSBuildBinPath)\**;
+      $(MSBuildToolsPath32)\**;
+    </MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns>
+
+    <!-- Unit tests may write to TEMP, but should not be considered outputs. -->
+    <MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns>
+      $(MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns);
+      $(Temp)\**;
     </MSBuildCacheAllowFileAccessAfterProjectFinishFilePatterns>
 
     <!-- 
